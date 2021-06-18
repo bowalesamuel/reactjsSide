@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./style.module.scss";
-import LandingHeader from "./landingHeader";
 import AuthLeft from "../../assets/svg/homeLeft.svg";
 import AuthRight from "../../assets/svg/homeRight.svg";
 

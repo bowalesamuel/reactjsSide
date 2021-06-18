@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import Loading from "../components/Loading";
 
 export default function capitalizeFirstLetter(s) {
@@ -97,8 +97,6 @@ export function sortData(temp1) {
   );
 }
 
-
 export const joinArray = (newDate, oldData) => {
   return [...oldData, ...newDate];
 };
-

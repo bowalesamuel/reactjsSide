@@ -1,6 +1,6 @@
 import axios from "axios";
 import { API_BASE_URL } from "../../configs/AppConfig";
-import history from "../history";
+// import history from "../history";
 import { AUTH_TOKEN, KEY } from "../constants";
 import { notification } from "antd";
 import "antd/dist/antd.css";
@@ -12,7 +12,7 @@ const service = axios.create({
 const key = KEY;
 
 // Config
-const ENTRY_ROUTE = "/signin";
+// const ENTRY_ROUTE = "/signin";
 const TOKEN_PAYLOAD_KEY = "x-auth-token";
 const PUBLIC_REQUEST_KEY = "public-request";
 
@@ -47,25 +47,25 @@ service.interceptors.request.use(
 
 service.interceptors.response.use(
   (response) => {
-    return response.data
+    return response.data;
   },
   (error) => {
     let notificationParam = {
       message: "",
-      duration:2.5,
+      duration: 2.5,
       key,
     };
     // console.log("err" + error); // for debug
     if (error.code === "ECONNABORTED") {
       notificationParam.message = "Connection Timeout";
     } else {
-      notificationParam.message = error?.response?.data?.message || error.message;
+      notificationParam.message =
+        error?.response?.data?.message || error.message;
     }
     notification.error(notificationParam);
 
     return Promise.reject(error);
   }
 );
-
 
 export default service;

@@ -1,12 +1,5 @@
-import { notification } from "antd";
 import * as actionTypes from "../constants";
 import authService from "../services/AuthService";
-
-// import { history } from "../store";
-
-const key = actionTypes.KEY;
-
-
 
 const GetFilms = (data) => async (dispatch) => {
   dispatch({

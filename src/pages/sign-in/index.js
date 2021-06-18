@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
-import {
-  Modal,
-  notification,
-  // Input as AntInput
-} from "antd";
 import { AuthHeader } from "../../components/header";
 import Input from "../../components/input";
 import Button from "../../components/button";
@@ -16,18 +11,6 @@ const SignIn = (props) => {
 
   const [email, handleEmail] = useState("");
   const [password, handlePassword] = useState("");
-
-  const onSubmit = () => {
-    if (password.match(/^[0-9A-Za-z!@#$%^&*]{6,}$/)) {
-      notification.success({
-        message: "it is okay",
-      });
-    } else {
-      notification.error({
-        message: "Not Good enough",
-      });
-    }
-  };
 
   return (
     <div className={styles.allFont}>

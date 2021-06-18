@@ -2,15 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Switch, Route } from "react-router-dom";
 import "./index.css";
-import reportWebVitals from "./reportWebVitals";
+// import reportWebVitals from "./reportWebVitals";
 import { ConnectedRouter } from "connected-react-router";
 import store, { history } from "./redux/store";
 import { Provider } from "react-redux";
 import {
   SignIn,
-  SignUp,
 } from "./pages";
-import { PrivateRoute } from "./utils/PrivateRoute";
 import { WaitingComponent } from "./utils/helper";
 
 const App = React.lazy(() => import("./App"));
@@ -20,7 +18,9 @@ ReactDOM.render(
     <ConnectedRouter history={history}>
       <Switch>
         <Route exact path="/">
-          {/* <Landing /> */}
+          <SignIn />
+        </Route>
+        <Route exact path="/signin">
           <SignIn />
         </Route>
         <Route path="/app">

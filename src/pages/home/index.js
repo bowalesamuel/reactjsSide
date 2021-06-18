@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Drawer, notification, Row, Col, Select } from "antd";
+import { Row, Col, Select } from "antd";
 import { DashboardLayout } from "../../components/layout";
 import styles from "../styles.module.scss";
-import png from "../../assets/png";
 import { getFilms } from "../../redux/actions/user";
 import FilmsSvg from "../../assets/svg/video-camera.svg";
 import StarshipSvg from "../../assets/svg/ufo.svg";
@@ -17,6 +16,7 @@ import Films from "./films";
 const Home = ({ getFilms }) => {
   useEffect(() => {
     getFilms();
+    // eslint-disable-next-line
   }, []);
 
   const history = useHistory()
@@ -71,7 +71,7 @@ const Home = ({ getFilms }) => {
                   className={styles.topinfo__image}
                   style={{ backgroundColor: "#03D4B6" + 30 }}
                 >
-                  <img src={FilmsSvg} />
+                  <img src={FilmsSvg} alt="" />
                 </div>
               </div>
               <div className={styles.topinfo__statistic}>200</div>
@@ -106,7 +106,7 @@ const Home = ({ getFilms }) => {
                   className={styles.topinfo__image}
                   style={{ backgroundColor: "#2170FF" + 30 }}
                 >
-                  <img src={StarshipSvg} />
+                  <img src={StarshipSvg} alt="" />
                 </div>
               </div>
               <div className={styles.topinfo__statistic}>200</div>
@@ -139,7 +139,7 @@ const Home = ({ getFilms }) => {
                   className={styles.topinfo__image}
                   style={{ backgroundColor: "#353190" + 30 }}
                 >
-                  <img src={PeopleSvg} />
+                  <img src={PeopleSvg} alt="" />
                 </div>
               </div>
               <div className={styles.topinfo__statistic}>200</div>
@@ -172,7 +172,7 @@ const Home = ({ getFilms }) => {
                   className={styles.topinfo__image}
                   style={{ backgroundColor: "#F0D93C" + 30 }}
                 >
-                  <img src={VehicleSvg} />
+                  <img src={VehicleSvg} alt="" />
                 </div>
               </div>
               <div className={styles.topinfo__statistic}>200</div>
@@ -205,7 +205,7 @@ const Home = ({ getFilms }) => {
                   className={styles.topinfo__image}
                   style={{ backgroundColor: "#353190" + 30 }}
                 >
-                  <img src={SpecieSvg} />
+                  <img src={SpecieSvg} alt="" />
                 </div>
               </div>
               <div className={styles.topinfo__statistic}>200</div>

@@ -5,7 +5,6 @@ import { Layout, Menu,
  } from "antd";
 import { Link, useHistory, useLocation } from "react-router-dom";
 import {
-  CaretDown,
   Power,
 } from "../../../assets/svg";
 import { navigation } from "./data";
@@ -16,8 +15,7 @@ import styles from "./styles.module.scss";
 import png from "../../../assets/png";
 
 
-const { Header, Content, Sider, 
-  Footer
+const { Header, Content, Sider
  } = Layout;
 
 function Toggle() {
@@ -38,35 +36,24 @@ function Toggle() {
   );
 }
 
-function getWindowDimensions() {
-  const { screen } = window;
-  let width = screen.width;
-  let height = screen.height;
-  return {
-    width,
-    height,
-  };
-}
+
 
 const DashboardLayout = ({ children, bg, user, logout, type }) => {
   const [showDropDown, setShowDropDown] = useState(false);
   const [showSideBar, setShowSideBar] = useState(true);
   // const [collapsed, setCollapsed] = useState(false);
-  const [windowDimensions,] = useState(
-    getWindowDimensions()
-  );
+  
 
   let location = useLocation();
   const { pathname } = location;
 
-  const toggle = () => {
-    setShowSideBar(!showSideBar);
-  };
+  // const toggle = () => {
+  //   setShowSideBar(!showSideBar);
+  // };
   const history = useHistory()
 
   return (
     <Layout>
-      {/* {console.log("dimension", windowDimensions)} */}
       <Sider
       // breakpoint="lg"
       // collapsedWidth="0"
@@ -104,7 +91,7 @@ const DashboardLayout = ({ children, bg, user, logout, type }) => {
       >
         <div className={styles.logo}>
           {/* <AstroLogoWhite /> */}
-          <img src={png.StarWarsLogo} width="150" height="50" />
+          <img src={png.StarWarsLogo} alt="logo" width="150" height="50" />
         </div>
         <Menu
           style={{
@@ -118,7 +105,7 @@ const DashboardLayout = ({ children, bg, user, logout, type }) => {
         >
           {navigation &&
             navigation.map(({ Icon, Name, route }) => (
-              <Menu.Item key={route} icon={<img src={Icon} style={{ fontSize: 18 }} />}>
+              <Menu.Item key={route} icon={<img src={Icon} alt="" style={{ fontSize: 18 }} />}>
                 <Link to={route} style={{fontSize:15}}>{Name}</Link>
               </Menu.Item>
             ))}
@@ -172,7 +159,7 @@ const DashboardLayout = ({ children, bg, user, logout, type }) => {
                 <div className={styles.header__right__name}>
                   <BellOutlined />
                   </div>
-                <img src={png.Avatar} width="40" height="40" />
+                <img src={png.Avatar} alt="" width="40" height="40" />
                 {/* <CaretDown /> */}
                 {showDropDown && (
                   <div

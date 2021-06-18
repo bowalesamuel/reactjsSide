@@ -127,7 +127,7 @@ const Input = ({
               {...prop}
               placeholder={placeholder ? placeholder : ""}
               className={`${
-                value.length == 0
+                value.length === 0
                   ? `${styles.input__input_placeholder}  ${styles.input__input}`
                   : error
                   ? styles.input__input_invalid
