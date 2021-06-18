@@ -1,0 +1,302 @@
+@import "../../breakpoints.scss";
+
+.header {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 90px;
+  position: sticky;
+  top: 0;
+
+  button {
+    flex: 0;
+    border-radius: 5px;
+  }
+}
+
+.Hamburger {
+  @include md {
+    display: none;
+  }
+}
+
+.closeMemu {
+  display: flex;
+
+  @include md {
+    display: none;
+  }
+}
+
+.mobile__nav {
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: #94385a;
+  z-index: 3;
+  padding-top: 50px;
+
+  @include lg {
+    display: none;
+  }
+}
+
+.landing {
+  &Header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    // background-color: #94385a;
+    background-image: linear-gradient(to right, #921946 10% , #eb537a);
+
+    @include md {
+      padding: 0 70px;
+    }
+
+    @include xl {
+      justify-content: space-evenly;
+      padding: 0 20%;
+    }
+
+    &.rev {
+      background-color: #fff;
+    }
+
+    &Left {
+      align-items: center;
+      width: 100%;
+
+      &Logo {
+        height: 60px;
+      }
+
+      &Links {
+        display: flex;
+        margin: 0 auto;
+        color: #ffffff;
+        align-items: center;
+        margin-right: 20px;
+        display: none;
+
+        &.links {
+          display: flex;
+          flex-direction: column;
+          margin: 0;
+          text-align: center;
+
+          @include md {
+            flex-direction: row;
+            margin-right: 10px;
+          }
+        }
+
+        &.mobile__nav {
+          display: flex;
+        }
+
+        @include md {
+          display: flex;
+          &.mobile__nav {
+            display: none;
+          }
+        }
+
+        @include sm {
+          flex-direction: column;
+          margin: 0;
+          text-align: center;
+        }
+
+        &Item {
+          font-weight: 500;
+          font-size: 15px;
+          line-height: 19px;
+          width: 80px;
+          cursor: pointer;
+          color: #ffffff;
+          margin-bottom: 15px;
+
+          @include md {
+            margin-bottom: 0;
+          }
+
+          &.active {
+            color: #d4abba;
+          }
+
+          &.rev {
+            color: #0d0d0b;
+            &.active {
+              color: #0066f5;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      flex: 0;
+      border-radius: 5px;
+      height: 43px;
+    }
+
+    .login {
+      background-color: transparent;
+      margin-right: 12px;
+      border: 1px solid;
+      margin-bottom: 15px;
+
+      @include md {
+        margin-bottom: 0;
+      }
+
+      @include sm {
+        margin-right: 0px;
+        padding: 15px;
+        padding-bottom: 30px;
+      }
+
+      &.rev {
+        background-color: #004578;
+      }
+    }
+
+    .signup {
+      background-color: #fff;
+      margin-right: 12px;
+      border: 1px solid;
+      color: #004578;
+      height: 43px;
+
+      @include sm {
+        margin-right: 0px;
+        padding: 15px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+}
+
+.auth {
+  display: flex;
+  flex-grow:2;
+  // padding: 20px 50px;
+  align-items: flex-start;
+  // margin-top: 60px;
+  // justify-content: space-around;
+  
+  // overflow: hidden;
+  
+
+  @include sm {
+    padding: 20px 20px;
+  }
+
+  &__left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    padding-top: 270px;
+    // padding-left: 50px;
+    background-color: #FFF6D3;
+     &__title {
+       color:#000;
+       font-weight: 600;
+       margin-bottom: 52px;
+       font-size: 17px;
+       padding-left: 40px;
+       width: 70%;
+     }
+
+    @include sm {
+      display: none;
+    }
+
+    @include md {
+      display: block;
+      width: clamp(200px, 50%, 400px);
+      margin-right: 20px;
+    }
+
+    @include lg {
+      width: 35%;
+    }
+
+    &__image {
+      height: 450px;
+      padding-bottom: 150px;
+      margin-right: 20px;
+      width: 320px;
+    }
+
+    font-size: 24px;
+    font-weight: 500;
+    color: rgb(99, 97, 97);
+  }
+
+  &__right {
+    
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include sm {
+      width: 100%;
+    }
+
+    @include md {
+      width: clamp(300px, 50%, 600px);
+      padding-top: 270px;
+    }
+
+    @include lg {
+      width: 65%;
+      padding-top: 270px;
+    }
+
+    &__content {
+      width: 400px;
+    }
+  }
+  &__right2 {
+    // padding-top: 270px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    @include sm {
+      width: 80%;
+      display: none;
+    }
+
+    @include md {
+      width: clamp(300px, 50%, 600px);
+    }
+
+    @include lg {
+      width: 20%;
+      padding-left: 100px;
+    }
+
+    &__image{
+      height: 150px;
+      // padding-bottom: 50%;
+      // margin-right: 20px;
+      width: 150px;
+    }
+    &__content {
+      width: 400px;
+    }
+  }
+}

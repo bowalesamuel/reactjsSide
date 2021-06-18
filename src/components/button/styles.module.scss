@@ -1,0 +1,29 @@
+.button {
+  font-size: 15px;
+  line-height: 18px;
+  padding: 11px 11px;
+  min-width: 128px;
+  flex: 1;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+  }
+
+  &.full {
+    background-color: #94385a;
+    color: #ffffff;
+  }
+  &.outline {
+    border: 1px solid #cfd0d7;
+    color: #012169;
+    background-color: #ffffff;
+  }
+}

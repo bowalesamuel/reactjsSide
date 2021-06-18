@@ -1,0 +1,117 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  position: relative;
+  margin-bottom: 15px;
+
+  .hint {
+    display: flex;
+    font-size: 12px;
+    line-height: 22px;
+    color: #8d909e;
+    margin-top: 6px;
+    align-items: center;
+
+    span {
+      margin-right: 7px;
+    }
+    div {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #8d909e;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 8px;
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 20px;
+    color: #0d0d0b;
+    font-weight: 450;
+    margin-bottom: 6px;
+  }
+
+  &__dummy {
+    display: flex;
+    align-items: center;
+    background: #fcfcfd;
+    border: 1px solid #cfd0d7;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 20px;
+    height: 46px;
+    color: #1a203d;
+    padding-left: 13px;
+
+    svg {
+      margin-right: 13px;
+    }
+
+    span {
+      font-size: 14px;
+      line-height: 20px;
+      color: #000000;
+    }
+  }
+
+  &__input {
+    background: #ffff;
+    // color: black;
+    border: 1px solid #cfd0d7;
+    box-sizing: border-box;
+    border-radius: 2px;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 12px 11px;
+    color: #1a203d;
+    display: flex;
+    height: 49px;
+    align-items: center;
+    transition: all 0.5 ease-in-out;
+
+    .caret {
+      transition: all 0.5 ease-in-out;
+      margin-left: auto;
+      path {
+        fill: #0d0d0b;
+      }
+    }
+
+    .open {
+      transform: rotate(180deg);
+      transition: all 0.3 ease-in-out;
+    }
+  }
+
+  &__optionHoder {
+    position: absolute !important;
+    top: 80px;
+    background: #fff;
+    border: 1px solid #cfd0d7;
+    width: 100%;
+    z-index: 90;
+    overflow-y: scroll;
+    max-height: 250px;
+    padding-bottom: 0px;
+
+    .option {
+      padding: 10px 12px;
+      border-bottom: 1px solid #cfd0d7;
+
+      &:hover {
+        background: #f2f2f2;
+      }
+    }
+
+    .option:last-child {
+      border: none;
+    }
+  }
+}

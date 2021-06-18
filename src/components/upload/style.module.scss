@@ -1,0 +1,48 @@
+.body {
+  background: #fcfcfd;
+  border: 1px dashed #cfd0d7;
+  display: flex;
+  align-items: center;
+  padding: 6px;
+  width: 100%;
+  flex-direction: column;
+  margin-bottom: 35px;
+
+  svg {
+    margin-bottom: 8px;
+  }
+
+  &.active {
+    background: #d7e7ff;
+    border: 1px dashed #0066f5;
+
+    svg {
+      path {
+        fill: #0066f5;
+      }
+    }
+  }
+}
+
+.name {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 450;
+  color: #cfd0d7;
+
+  &.active {
+    color: #0066f5;
+  }
+}
+
+.upload {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 450;
+  color: #0066f5;
+  cursor: pointer;
+
+  &.active {
+    color: #0d0d0b;
+  }
+}

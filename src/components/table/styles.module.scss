@@ -1,0 +1,84 @@
+.table {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: 18px;
+    line-height: 22px;
+    color: #012169;
+    margin-bottom: 24px;
+  }
+  &__main {
+    background-color: #fff;
+    border-radius: 2.14562px 2.14562px 0px 0px;
+    padding: 0px 22px 24px;
+    margin-bottom: 40px;
+    overflow: auto;
+  }
+  table {
+    width: 98%;
+
+    th {
+      text-align: left;
+    }
+  }
+
+  th {
+    font-size: 15px;
+    line-height: 18px;
+    color: #000000;
+    font-weight: 400;
+  }
+
+  th {
+    padding: 18px 12px;
+    border-bottom: 1.07281px solid #eaeaea;
+  }
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1.07281px solid #eaeaea;
+  }
+  td {
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .success {
+    background: #ecfbec;
+    font-size: 12px;
+    line-height: 14px;
+    color: #6fd26e;
+    border: 1px solid #6fd26e;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 6px;
+    width: fit-content;
+    font-weight: 400;
+  }
+  .pending {
+    font-size: 12px;
+    line-height: 14px;
+    color: #f4bd51;
+    background: #fef6e0;
+    border: 1px solid #f4bd51;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 6px;
+    width: fit-content;
+    font-weight: 400;
+  }
+
+  .declined {
+    font-size: 12px;
+    line-height: 14px;
+    color: #eb5757;
+    background: #ffe0e8;
+    border: 1px solid #eb5757;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding: 6px;
+    width: fit-content;
+    font-weight: 400;
+  }
+}

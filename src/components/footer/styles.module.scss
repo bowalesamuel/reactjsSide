@@ -1,0 +1,81 @@
+.footer {
+  background: #031931;
+  padding: 40px;
+  color: #ffffff;
+
+  &Bottom {
+    display: flex;
+    justify-content: space-between;
+
+    .left {
+      width: 30%;
+      .logo {
+        margin-bottom: 9px;
+      }
+
+      .main {
+        font-weight: 450;
+        font-size: 15px;
+        line-height: 19px;
+        margin-bottom: 9px;
+      }
+
+      .sub {
+        font-weight: 450;
+        font-size: 12px;
+        line-height: 15px;
+        color: #ededed;
+        margin-bottom: 8px;
+      }
+
+      .btnHolder {
+        display: flex;
+        align-items: center;
+      }
+
+      .iosBtn {
+        height: 46px;
+        padding: 0 23px;
+        cursor: pointer;
+        width: fit-content;
+        left: 95px;
+        top: 452px;
+        background: #94385a;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-weight: 450;
+        font-size: 22px;
+        line-height: 28px;
+        color: #ffffff;
+        margin-right: 9px;
+
+        svg {
+          margin-right: 9px;
+        }
+
+        &.android {
+          padding: 0 10px;
+        }
+      }
+    }
+    .center {
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+
+      .link {
+        font-weight: 450;
+        font-size: 14px;
+        line-height: 18px;
+      }
+    }
+
+    .right {
+      width: 30%;
+    }
+  }
+}
