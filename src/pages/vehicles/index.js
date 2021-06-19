@@ -35,36 +35,36 @@ function Vehicles({ transaction, fetchTrans }) {
   const columns = [
     {
       title: "Vehicle Name",
-      dataIndex: "created_at",
-      render: (createdAt) => `${date(createdAt)}`,
+      dataIndex: "name",
+      // render: (createdAt) => `${date(createdAt)}`,
     },
     {
       title: "Vehicle Model",
-      dataIndex: "status",
+      dataIndex: "model",
     },
     {
       title: "Vehicle Class",
-      dataIndex: "status",
+      dataIndex: "vehicle_class",
     },
     {
       title: "Vehicle Manufacturer",
-      dataIndex: "status",
+      dataIndex: "manufacturer",
     },
     {
       title: "Vehicle length",
-      dataIndex: "status",
+      dataIndex: "length",
     },
     {
       title: "Crew",
-      dataIndex: "status",
+      dataIndex: "crew",
     },
     {
       title: "Passengers",
-      dataIndex: "status",
+      dataIndex: "passengers",
     },
     {
       title: "Cargo Capacity",
-      dataIndex: "status",
+      dataIndex: "cargo_capacity",
     },
   ];
 
@@ -86,7 +86,7 @@ function Vehicles({ transaction, fetchTrans }) {
         <Table
           columns={columns}
           // rowKey={(record) => record.login.uuid}
-          dataSource={transaction.transactions}
+          dataSource={transaction.results}
           pagination={{
             current: pagination.current,
             pageSize: pagination.pageSize,
@@ -94,7 +94,7 @@ function Vehicles({ transaction, fetchTrans }) {
           }}
           loading={loading}
           onChange={handleTableChange}
-          scroll={{ x: 1000, y: 300 }}
+          scroll={{ x: 1000 }}
         />
       </div>
     </DashboardLayout>

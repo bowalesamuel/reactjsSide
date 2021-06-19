@@ -34,28 +34,30 @@ function Films({ transaction, fetchTrans }) {
   const columns = [
     {
       title: "Film Title",
-      dataIndex: "created_at",
-      render: (createdAt) => `${date(createdAt)}`,
+      dataIndex: "title",
+      // render: (createdAt) => `${date(createdAt)}`,
     },
     {
       title: "Director",
-      dataIndex: "status",
+      dataIndex: "director",
     },
     {
       title: "Producer",
-      dataIndex: "status",
+      dataIndex: "producer",
     },
     {
       title: "Release Date",
-      dataIndex: "status",
+      dataIndex: "release_date",
+      render: (createdAt) => `${date(createdAt)}`,
     },
     {
       title: "Episode ID",
-      dataIndex: "status",
+      dataIndex: "episode_id",
     },
     {
       title: "Characters",
-      dataIndex: "status",
+      dataIndex: "characters",
+      render:(a) => `${a[0]}`
     },
     // {
     //   title: "Created",
@@ -94,7 +96,7 @@ function Films({ transaction, fetchTrans }) {
         <Table
           columns={columns}
           // rowKey={(record) => record.login.uuid}
-          dataSource={transaction.transactions}
+          dataSource={transaction.results}
           pagination={{
             current: pagination.current,
             pageSize: pagination.pageSize,
@@ -110,7 +112,7 @@ function Films({ transaction, fetchTrans }) {
 }
 
 const mapStateToProps = (state) => ({
-  transaction: state.user.people,
+  transaction: state.user.films,
 });
 
 const mapDispatchToProps = (dispatch) => ({

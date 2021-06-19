@@ -2,20 +2,25 @@ import * as actionTypes from "../constants";
 import authService from "../services/AuthService";
 
 const GetFilms = (data) => async (dispatch) => {
+  let uri = "https://swapi.dev/api/films/?format=json";
   dispatch({
     type: actionTypes.GET_FILMS_PENDING,
   });
-
-  await authService
-    .getFilms(data)
+  fetch(uri, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
     .then((response) => {
       dispatch({
         type: actionTypes.GET_FILMS_SUCCESS,
-        payload: response.data,
+        payload: response.results,
       });
     })
     .catch((err) => {
-      dispatch({
+          dispatch({
         type: actionTypes.GET_FILMS_FAILED,
         payload: err,
       });
@@ -27,20 +32,26 @@ export const getFilms = (data) => (dispatch) => {
 };
 
 const GetSpecies = (data) => async (dispatch) => {
+  let uri = "https://swapi.dev/api/species/?format=json";
   dispatch({
     type: actionTypes.GET_SPECIES_PENDING,
   });
 
-  await authService
-    .getFilms(data)
+  fetch(uri, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
     .then((response) => {
       dispatch({
         type: actionTypes.GET_SPECIES_SUCCESS,
-        payload: response.data,
+        payload: response.results,
       });
     })
     .catch((err) => {
-      dispatch({
+          dispatch({
         type: actionTypes.GET_SPECIES_FAILED,
         payload: err,
       });
@@ -52,20 +63,26 @@ export const getSpecies = (data) => (dispatch) => {
 };
 
 const GetVehicles = (data) => async (dispatch) => {
+  let uri = "https://swapi.dev/api/vehicles/?format=json";
   dispatch({
     type: actionTypes.GET_VEHICLES_PENDING,
   });
 
-  await authService
-    .getFilms(data)
+  fetch(uri, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
     .then((response) => {
       dispatch({
         type: actionTypes.GET_VEHICLES_SUCCESS,
-        payload: response.data,
+        payload: response.results,
       });
     })
     .catch((err) => {
-      dispatch({
+          dispatch({
         type: actionTypes.GET_VEHICLES_FAILED,
         payload: err,
       });
@@ -77,20 +94,26 @@ export const getVehicles = (data) => (dispatch) => {
 };
 
 const GetStarships = (data) => async (dispatch) => {
+  let uri = "https://swapi.dev/api/starships/?format=json";
   dispatch({
     type: actionTypes.GET_STARSHIPS_PENDING,
   });
 
-  await authService
-    .getFilms(data)
+  fetch(uri, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
     .then((response) => {
       dispatch({
         type: actionTypes.GET_STARSHIPS_SUCCESS,
-        payload: response.data,
+        payload: response.results,
       });
     })
     .catch((err) => {
-      dispatch({
+          dispatch({
         type: actionTypes.GET_STARSHIPS_FAILED,
         payload: err,
       });
@@ -102,20 +125,26 @@ export const getStarships = (data) => (dispatch) => {
 };
 
 const GetPeople = (data) => async (dispatch) => {
+  let uri = "https://swapi.dev/api/people/?format=json";
   dispatch({
     type: actionTypes.GET_PEOPLE_PENDING,
   });
 
-  await authService
-    .getFilms(data)
+  fetch(uri, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json;charset=UTF-8",
+    },
+  })
+    .then((res) => res.json())
     .then((response) => {
       dispatch({
         type: actionTypes.GET_PEOPLE_SUCCESS,
-        payload: response.data,
+        payload: response.results,
       });
     })
     .catch((err) => {
-      dispatch({
+          dispatch({
         type: actionTypes.GET_PEOPLE_FAILED,
         payload: err,
       });

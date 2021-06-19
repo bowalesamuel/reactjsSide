@@ -35,42 +35,42 @@ function People({ transaction, fetchTrans }) {
   const columns = [
     {
       title: "Name",
-      dataIndex: "created_at",
-      render: (createdAt) => `${date(createdAt)}`,
+      dataIndex: "name",
+      // render: (createdAt) => `${date(createdAt)}`,
     },
     {
       title: "Birth Year",
-      dataIndex: "status",
+      dataIndex: "birth_year",
     },
     {
       title: "Gender",
-      dataIndex: "status",
+      dataIndex: "gender",
     },
     {
       title: "Eye color",
-      dataIndex: "status",
+      dataIndex: "eye_color",
     },
     {
       title: "Hair color",
-      dataIndex: "status",
+      dataIndex: "hair_color",
     },
     {
       title: "Height",
-      dataIndex: "status",
+      dataIndex: "height",
     },
     {
       title: "Mass",
-      dataIndex: "status",
+      dataIndex: "mass",
+      render: (createdAt) => `${createdAt} KG`,
     },
     {
       title: "Skin color",
-      dataIndex: "status",
+      dataIndex: "skin_color",
     },
     {
       title: "Created",
-      dataIndex: "id",
-      key: "x",
-      render: (id) => <p style={{ cursor: "pointer" }}>View Details</p>,
+      dataIndex: "created",
+      render: (createdAt) => `${date(createdAt)}`,
     },
   ];
 
@@ -92,7 +92,7 @@ function People({ transaction, fetchTrans }) {
         <Table
           columns={columns}
           // rowKey={(record) => record.login.uuid}
-          dataSource={transaction.transactions}
+          dataSource={transaction.results}
           pagination={{
             current: pagination.current,
             pageSize: pagination.pageSize,
@@ -100,7 +100,7 @@ function People({ transaction, fetchTrans }) {
           }}
           loading={loading}
           onChange={handleTableChange}
-          scroll={{ x: 1000, y: 300 }}
+          scroll={{ x: 1000 }}
         />
       </div>
     </DashboardLayout>

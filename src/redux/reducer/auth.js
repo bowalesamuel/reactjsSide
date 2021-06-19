@@ -5,23 +5,23 @@ const initState = {
   loading: false,
   
   species: {
-    referrals: [],
+    results: [],
     meta: {},
   },
   films: {
-    referrals: [],
+    results: [],
     meta: {},
   },
   vehicles: {
-    referrals: [],
+    results: [],
     meta: {},
   },
   people: {
-    referrals: [],
+    results: [],
     meta: {},
   },
   starships: {
-    referrals: [],
+    results: [],
     meta: {},
   },
 };
@@ -55,7 +55,10 @@ const authReducer = (state = initState, action) => {
         ...state,
         loading: false,
         error: null,
-        films:action.payload
+        films:{
+          ...state.films,
+          results:action.payload
+        }
       };
 
       case actionTypes.GET_STARSHIPS_SUCCESS:
@@ -68,7 +71,10 @@ const authReducer = (state = initState, action) => {
         ...state,
         loading: false,
         error: null,
-        starships:action.payload
+        starships:{
+          ...state.starships,
+          results:action.payload
+        }
       };
 
       case actionTypes.GET_PEOPLE_SUCCESS:
@@ -81,7 +87,10 @@ const authReducer = (state = initState, action) => {
         ...state,
         loading: false,
         error: null,
-        people:action.payload
+        people: {
+          ...state.people,
+          results:action.payload
+        }
       };
 
       case actionTypes.GET_SPECIES_SUCCESS:
@@ -94,7 +103,10 @@ const authReducer = (state = initState, action) => {
         ...state,
         loading: false,
         error: null,
-        species:action.payload
+        species: {
+          ...state.species,
+          results:action.payload
+        }
       };
 
       case actionTypes.GET_VEHICLES_SUCCESS:
@@ -107,7 +119,10 @@ const authReducer = (state = initState, action) => {
         ...state,
         loading: false,
         error: null,
-        vehicles:action.payload
+        vehicles: {
+          ...state.vehicles,
+          results:action.payload
+        }
       };
     
     case actionTypes.GET_STARSHIPS_FAILED:

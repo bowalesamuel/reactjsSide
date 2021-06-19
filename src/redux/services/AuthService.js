@@ -5,7 +5,7 @@ const authService = {};
 authService.getFilms = function (payload) {
 
   return fetch({
-    url: "/films/",
+    url: "/films/?format=json",
     method: "get",
     headers: {
       "public-request": "true",

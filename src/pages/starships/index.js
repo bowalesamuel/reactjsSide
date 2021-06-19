@@ -35,34 +35,34 @@ function Starships({ transaction, fetchTrans }) {
   const columns = [
     {
       title: "Name",
-      dataIndex: "created_at",
-      render: (createdAt) => `${date(createdAt)}`,
+      dataIndex: "name",
+      // render: (createdAt) => `${date(createdAt)}`,
     },
     {
       title: "Model",
-      dataIndex: "status",
+      dataIndex: "model",
     },
     {
       title: "Class",
-      dataIndex: "status",
+      dataIndex: "starship_class",
     },
     {
       title: "Cost in (GC)",
-      dataIndex: "status",
+      dataIndex: "cost_in_credits",
     },
     {
       title: "Passengers",
-      dataIndex: "status",
+      dataIndex: "passengers",
     },
     {
       title: "Length",
-      dataIndex: "status",
+      dataIndex: "length",
     },
     {
       title: "Crew",
-      dataIndex: "id",
-      key: "x",
-      render: (id) => <p style={{ cursor: "pointer" }}>View Details</p>,
+      dataIndex: "crew",
+      // key: "x",
+      // render: (id) => <p style={{ cursor: "pointer" }}>View Details</p>,
     },
   ];
 
@@ -84,7 +84,7 @@ function Starships({ transaction, fetchTrans }) {
         <Table
           columns={columns}
           // rowKey={(record) => record.login.uuid}
-          dataSource={transaction.transactions}
+          dataSource={transaction.results}
           pagination={{
             current: pagination.current,
             pageSize: pagination.pageSize,
@@ -92,7 +92,7 @@ function Starships({ transaction, fetchTrans }) {
           }}
           loading={loading}
           onChange={handleTableChange}
-          scroll={{ x: 1000, y: 300 }}
+          scroll={{ x: 1000 }}
         />
       </div>
     </DashboardLayout>

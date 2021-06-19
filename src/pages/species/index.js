@@ -35,38 +35,38 @@ function Species({ transaction, fetchTrans }) {
   const columns = [
     {
       title: "Name",
-      dataIndex: "created_at",
-      render: (createdAt) => `${date(createdAt)}`,
+      dataIndex: "name",
+      // render: (createdAt) => `${date(createdAt)}`,
     },
     {
       title: "Classification",
-      dataIndex: "status",
+      dataIndex: "classification",
     },
     {
       title: "Designation",
-      dataIndex: "status",
+      dataIndex: "designation",
     },
     {
       title: "Average Height",
-      dataIndex: "status",
+      dataIndex: "average_height",
     },
     {
       title: "Average Lifespan",
-      dataIndex: "status",
+      dataIndex: "average_lifespan",
     },
     {
       title: "Eye colors",
-      dataIndex: "status",
+      dataIndex: "eye_colors",
     },
     {
       title: "Hair colors",
-      dataIndex: "status",
+      dataIndex: "hair_colors",
     },
     {
       title: "Language",
-      dataIndex: "id",
-      key: "x",
-      render: (id) => <p style={{ cursor: "pointer" }}>View Details</p>,
+      dataIndex: "language",
+      // key: "x",
+      // render: (id) => <p style={{ cursor: "pointer" }}>View Details</p>,
     },
   ];
 
@@ -88,7 +88,7 @@ function Species({ transaction, fetchTrans }) {
         <Table
           columns={columns}
           // rowKey={(record) => record.login.uuid}
-          dataSource={transaction.transactions}
+          dataSource={transaction.results}
           pagination={{
             current: pagination.current,
             pageSize: pagination.pageSize,
@@ -96,7 +96,7 @@ function Species({ transaction, fetchTrans }) {
           }}
           loading={loading}
           onChange={handleTableChange}
-          scroll={{ x: 1000, y: 300 }}
+          scroll={{ x: 1000 }}
         />
       </div>
     </DashboardLayout>
