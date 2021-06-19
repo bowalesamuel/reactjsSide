@@ -3,7 +3,7 @@ import { Table } from "antd";
 import { DashboardLayout } from "../../components/layout";
 import { connect } from "react-redux";
 import { getSpecies } from "../../redux/actions/user";
-import { date } from "../../utils/helper";
+// import { date } from "../../utils/helper";
 
 function Species({ transaction, fetchTrans }) {
   const [loading, setLoading] = useState(false);

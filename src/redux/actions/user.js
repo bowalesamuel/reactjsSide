@@ -1,5 +1,5 @@
 import * as actionTypes from "../constants";
-import authService from "../services/AuthService";
+// import authService from "../services/AuthService";
 
 const GetFilms = (data) => async (dispatch) => {
   let uri = "https://swapi.dev/api/films/?format=json";
